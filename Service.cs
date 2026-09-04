@@ -4,7 +4,16 @@ using System.Text;
 
 namespace InnManager
 {
-    internal class Service
+    public class Service
     {
+
+        public string ServiceName { get; set; } = string.Empty;
+
+        public string Description { get; set; } = string.Empty;
+
+        public decimal Price { get; set; } = decimal.Zero;
+
+        public bool IsAvailable { get; set; } = true;
+
     }
 }

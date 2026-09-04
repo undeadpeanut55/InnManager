@@ -4,7 +4,17 @@ using System.Text;
 
 namespace InnManager
 {
-    internal class Payment
+    public class Payment
     {
+
+        public decimal Amount { get; set; } = decimal.Zero;
+
+        public DateTime PaymentDate { get; set; } = DateTime.Now;
+
+        public string PaymentMethod { get; set; } = string.Empty;
+
+        public bool IsSuccessful { get; set; } = false;
+
+
     }
 }

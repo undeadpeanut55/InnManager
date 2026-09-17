@@ -4,7 +4,15 @@ using System.Text;
 
 namespace InnManager
 {
-    internal class PaymentMethod
+    /// <summary>
+    /// Enum representing the different methods of payments
+    /// </summary>
+    public enum PaymentMethod
     {
+        Cash,
+        CreditCard,
+        DebitCard,
+        DigitalWallet,
+        BankTransfer
     }
 }

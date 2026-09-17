@@ -4,7 +4,16 @@ using System.Text;
 
 namespace InnManager
 {
-    internal class HotelType
+    /// <summary>
+    /// Enum representing the different types of hotels
+    /// </summary>
+    public enum HotelType
     {
+        Standard,
+        Boutique,
+        Resort,
+        Business,
+        ExtendedStay,
+        Airport
     }
 }

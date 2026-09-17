@@ -4,7 +4,15 @@ using System.Text;
 
 namespace InnManager
 {
-    internal class EmployeePosition
+    /// <summary>
+    /// Enum representing the different employee positions at a hotel
+    /// </summary>
+    public enum EmployeePosition
     {
+        Manager,
+        FrontDesk,
+        Housekeeper,
+        Maintenance,
+        Concierge
     }
 }

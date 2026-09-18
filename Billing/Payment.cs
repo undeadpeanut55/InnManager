@@ -1,4 +1,5 @@
-﻿using System;
+﻿using InnManager.Billing;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -7,17 +8,8 @@ namespace InnManager
     /// <summary>
     /// Represents a payment on an invoice
     /// </summary>
-    public class Payment
+    public class Payment : BillingRecord
     {
-        /// <summary>
-        /// The amount on the payment
-        /// </summary>
-        public decimal Amount { get; set; } = decimal.Zero;
-
-        /// <summary>
-        /// When the payment was made
-        /// </summary>
-        public DateTime PaymentDate { get; set; } = DateTime.Now;
 
         /// <summary>
         /// What method was used for the payment
@@ -25,10 +17,9 @@ namespace InnManager
         public PaymentMethod PaymentMethod { get; set; } = PaymentMethod.Cash;
 
         /// <summary>
-        /// If the payment was successful
+        /// The amount but with its sign
         /// </summary>
-        public bool IsSuccessful { get; set; } = false;
-
+        public override decimal SignedAmount => -Amount;
 
     }
 }

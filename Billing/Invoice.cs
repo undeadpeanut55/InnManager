@@ -1,4 +1,5 @@
-﻿using System;
+﻿using InnManager.Billing;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -20,30 +21,67 @@ namespace InnManager
         public string RoomNumber { get; set; } = string.Empty;
 
         /// <summary>
-        /// Charge on the invoice for the room
+        /// Aa list of billing records on the invoice
         /// </summary>
-        public decimal RoomCharge { get; set; } = decimal.Zero;
-
+        public List<BillingRecord> BillingRecords { get; } = new List<BillingRecord>();
+        
         /// <summary>
-        /// Charge on the invoice for services
+        /// Total charges on the invoice
         /// </summary>
-        public decimal ServiceCharge { get; set; } = decimal.Zero;
-
-        /// <summary>
-        /// If the invoice is paid
-        /// </summary>
-        public bool IsPaid { get; set; } = false;
-
-        /// <summary>
-        /// Total amount on the invoice
-        /// </summary>
-        public decimal TotalAmount
+        public decimal TotalCharges
         {
             get
             {
-                return RoomCharge + ServiceCharge;
+                decimal total = 0;
+                foreach(BillingRecord record in BillingRecords)
+                {
+                    if(record is Charge && record.IsProcessed)
+                    {
+                        total += record.Amount;
+                    }
+                }
+                return total;
             }
         }
+
+        /// <summary>
+        /// Total payments on the invoice
+        /// </summary>
+        public decimal TotalPayments
+        {
+            get
+            {
+                decimal total = 0;
+                foreach(BillingRecord record in BillingRecords)
+                {
+                    if(record is Payment && record.IsProcessed)
+                    {
+                        total += record.Amount;
+                    }
+                }
+                return total;
+            }
+        }
+
+        /// <summary>
+        /// Balance due on the invoice
+        /// </summary>
+        public decimal BalanceDue
+        {
+            get
+            {
+                decimal balance = 0;
+                foreach (BillingRecord record in BillingRecords)
+                {
+                    if (record.IsProcessed)
+                    {
+                        balance += record.SignedAmount;
+                    }
+                }
+                return balance;
+            }
+        }
+
 
         /// <summary>
         /// Status of the invoice
@@ -52,7 +90,7 @@ namespace InnManager
         {
             get
             {
-                if (IsPaid) return "Paid";
+                if (BalanceDue <= 0) return "Paid";
                 return "Unpaid";
             }
         }

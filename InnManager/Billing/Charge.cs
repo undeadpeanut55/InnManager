@@ -13,7 +13,7 @@ namespace InnManager.Billing
         /// <summary>
         /// The category of the charge
         /// </summary>
-        public ChargeCategory Category { get; set; }
+        public ChargeCategory Category { get; set; } = ChargeCategory.Miscellaneous;
 
         /// <summary>
         /// The signed version of the amount charged

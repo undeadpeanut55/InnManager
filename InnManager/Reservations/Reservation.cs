@@ -46,7 +46,7 @@ namespace InnManager
         {
             get
             {
-                if(IsCheckedOut && (DateTime.Now > CheckOutDate))
+                if(!IsCheckedOut && (DateTime.Now.Date > CheckOutDate.Date))
                 {
                     return true;
                 }

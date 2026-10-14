@@ -1,4 +1,4 @@
-﻿using InnManager;
+﻿using InnManager.Housekeeping;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -17,6 +17,7 @@ namespace InnManagerTests
             Assert.Equal(DateTime.Now.Date, ht.ScheduledDate.Date);
             Assert.False(ht.IsCompleted);
             Assert.Equal("Not Completed", ht.Status);
+            Assert.Empty(ht.AssignedStaff);
         }
     }
 }

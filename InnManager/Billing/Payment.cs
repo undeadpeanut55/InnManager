@@ -1,15 +1,19 @@
-﻿using InnManager.Billing;
+﻿using InnManager.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace InnManager
+namespace InnManager.Billing
 {
     /// <summary>
     /// Represents a payment on an invoice
     /// </summary>
     public class Payment : BillingRecord
     {
+        /// <summary>
+        /// A number assigned to the payment
+        /// </summary>
+        public string ReferenceNumber { get; set; } = string.Empty;
 
         /// <summary>
         /// What method was used for the payment

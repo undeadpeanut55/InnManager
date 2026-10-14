@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace InnManager
+namespace InnManager.Enums
 {
     /// <summary>
     /// Enum representing the different types of hotels

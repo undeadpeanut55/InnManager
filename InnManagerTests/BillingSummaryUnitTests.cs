@@ -1,5 +1,4 @@
-﻿using InnManager;
-using InnManager.Billing;
+﻿using InnManager.Billing;
 using System;
 using System.Collections.Generic;
 using System.Text;

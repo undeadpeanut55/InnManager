@@ -1,15 +1,24 @@
-﻿using InnManager.Billing;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace InnManager
+namespace InnManager.Billing
 {
     /// <summary>
     /// Represents an invoice for a guest
     /// </summary>
     public class Invoice
     {
+        /// <summary>
+        /// An auto generated number used to uniquely identify an invoice
+        /// </summary>
+        public string InvoiceNumber { get; set; } = string.Empty;
+
+        /// <summary>
+        /// The time the invoice was created
+        /// </summary>
+        public DateTime InvoiceDate { get; set; } = DateTime.Now;
+
         /// <summary>
         /// Name of the guest responsible for the invoice
         /// </summary>
@@ -19,6 +28,11 @@ namespace InnManager
         /// Room number that is responsible for the invoice
         /// </summary>
         public string RoomNumber { get; set; } = string.Empty;
+
+        /// <summary>
+        /// When the invoice is due
+        /// </summary>
+        public DateTime DueDate { get; set; } = DateTime.Now;
 
         /// <summary>
         /// Aa list of billing records on the invoice

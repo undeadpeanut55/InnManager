@@ -1,4 +1,5 @@
-﻿using InnManager;
+﻿using InnManager.Enums;
+using InnManager.Services;
 using System;
 using System.Collections.Generic;
 using System.Text;

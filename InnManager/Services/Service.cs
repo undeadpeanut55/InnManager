@@ -1,8 +1,9 @@
-﻿using System;
+﻿using InnManager.Enums;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace InnManager
+namespace InnManager.Services
 {
     /// <summary>
     /// Represents a service that can be done at a hotel

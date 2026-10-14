@@ -1,6 +1,8 @@
-﻿using InnManager;
-using InnManager.Billing;
+﻿using InnManager.Billing;
 using InnManager.Enums;
+using InnManager.Hotels;
+using InnManager.Housekeeping;
+using InnManager.Rooms;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;

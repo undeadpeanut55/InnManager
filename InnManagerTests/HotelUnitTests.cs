@@ -1,4 +1,6 @@
-﻿using InnManager;
+﻿using InnManager.Enums;
+using InnManager.Hotels;
+using InnManager.Rooms;
 using System;
 using System.Collections.Generic;
 using System.Text;

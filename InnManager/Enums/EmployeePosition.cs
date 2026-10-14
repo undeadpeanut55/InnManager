@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace InnManager
+namespace InnManager.Enums
 {
     /// <summary>
     /// Enum representing the different employee positions at a hotel

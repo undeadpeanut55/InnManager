@@ -1,5 +1,5 @@
-﻿using InnManager;
-using InnManager.Billing;
+﻿using InnManager.Billing;
+using InnManager.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -19,6 +19,7 @@ namespace InnManagerTests
             Assert.False(p.IsProcessed);
             Assert.Equal(PaymentMethod.Cash, p.PaymentMethod);
             Assert.Equal(decimal.Zero, p.SignedAmount);
+            Assert.Empty(p.ReferenceNumber);
 
         }
 

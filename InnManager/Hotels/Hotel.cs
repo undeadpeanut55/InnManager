@@ -1,8 +1,16 @@
-﻿using System;
+﻿using InnManager.Billing;
+using InnManager.Employees;
+using InnManager.Enums;
+using InnManager.Guests;
+using InnManager.Housekeeping;
+using InnManager.Reservations;
+using InnManager.Rooms;
+using InnManager.Services;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace InnManager
+namespace InnManager.Hotels
 {
     /// <summary>
     /// Represents a Hotel

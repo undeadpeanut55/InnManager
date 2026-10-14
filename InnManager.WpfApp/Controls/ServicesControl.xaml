@@ -1,0 +1,73 @@
+﻿<UserControl x:Class="InnManager.WpfApp.Controls.ServicesControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:InnManager.WpfApp.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Services" FontSize="35" FontWeight="Bold" Background="LightBlue" Grid.Row="0" Grid.ColumnSpan="2"/>
+
+        <WrapPanel Grid.Row="1" Grid.ColumnSpan="2" Background="Linen">
+            <WrapPanel.Resources>
+                <Style TargetType="Button">
+                    <Setter Property="FontSize" Value="15"/>
+                    <Setter Property="Margin" Value="10"/>
+                    <Setter Property="Height" Value="25"/>
+                </Style>
+            </WrapPanel.Resources>
+            <Button Content="Add Service"/>
+            <Button Content="Edit"/>
+            <Button Content="Delete"/>
+            <Button Content="Refresh"/>
+
+        </WrapPanel>
+
+        <TextBox Height="25" FontSize="15" Grid.Row="1" Grid.Column="1" Width="250" Text="Search service name or category... "/>
+
+        <Grid Grid.ColumnSpan="2" Grid.Row="2" Background="LightBlue">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="25"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="Service Name"/>
+            <TextBlock Text="Description" Grid.Column="1"/>
+            <TextBlock Text="Price ($)" Grid.Column="2"/>
+            <TextBlock Text="Available" Grid.Column="3"/>
+            <TextBlock Text="Category" Grid.Column="4"/>
+
+            <StackPanel Grid.Row="1" Grid.ColumnSpan="5">
+
+            </StackPanel>
+
+            <TextBlock Grid.ColumnSpan="8" Grid.Row="2" Text="Total Services: 0"/>
+
+        </Grid>
+
+    </Grid>
+
+</UserControl>

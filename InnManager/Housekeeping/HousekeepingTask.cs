@@ -2,13 +2,18 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace InnManager
+namespace InnManager.Housekeeping
 {
     /// <summary>
     /// A housekeeping task that is performed at a hotel
     /// </summary>
     public class HousekeepingTask
     {
+        /// <summary>
+        /// The hotel staff assigned to the task
+        /// </summary>
+        public string AssignedStaff { get; set; } = string.Empty;
+
         /// <summary>
         /// The room number the task was assigned
         /// </summary>

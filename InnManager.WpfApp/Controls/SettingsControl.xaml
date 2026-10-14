@@ -1,0 +1,36 @@
+﻿<UserControl x:Class="InnManager.WpfApp.Controls.SettingsControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:InnManager.WpfApp.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="640" d:DesignWidth="880">
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Settings" FontSize="35" FontWeight="Bold" Background="LightBlue" Grid.Row="0" />
+
+        <WrapPanel Grid.Row="1" Background="Linen">
+            <WrapPanel.Resources>
+                <Style TargetType="Button">
+                    <Setter Property="FontSize" Value="15"/>
+                    <Setter Property="Margin" Value="10"/>
+                    <Setter Property="Height" Value="50"/>
+                    <Setter Property="Width" Value="270"/>
+                    <Setter Property="VerticalContentAlignment" Value="Center"/>
+                </Style>
+            </WrapPanel.Resources>
+            <Button Content="Hotel Information"/>
+            <Button Content="Reservation and Billing"/>
+            <Button Content="Account"/>
+
+        </WrapPanel>
+
+    </Grid>
+
+</UserControl>

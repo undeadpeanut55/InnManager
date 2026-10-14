@@ -1,4 +1,4 @@
-﻿using InnManager;
+﻿using InnManager.Reservations;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -21,6 +21,7 @@ namespace InnManagerTests
             Assert.False(r.IsCheckedOutOverdue);
             Assert.False(r.IsActive);
             Assert.Equal("Pending", r.Status);
+            Assert.Empty(r.ReservationNumber);
         }
 
         [Theory]

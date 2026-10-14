@@ -1,5 +1,4 @@
-﻿using InnManager;
-using InnManager.Billing;
+﻿using InnManager.Billing;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -20,6 +19,9 @@ namespace InnManagerTests
             Assert.Equal(0,i.TotalPayments);
             Assert.Equal(0,i.BalanceDue);
             Assert.Equal("Paid", i.Status);
+            Assert.Empty(i.InvoiceNumber);
+            Assert.Equal(DateTime.Now.Date, i.InvoiceDate.Date);
+            Assert.Equal(DateTime.Now.Date, i.DueDate.Date);
         }
 
         [Theory]

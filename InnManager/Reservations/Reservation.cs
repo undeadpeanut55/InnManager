@@ -2,13 +2,18 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace InnManager
+namespace InnManager.Reservations
 {
     /// <summary>
     /// A reservation made at a hotel
     /// </summary>
     public class Reservation
     {
+        /// <summary>
+        /// An auto generated number used to uniquely identify a reservation
+        /// </summary>
+        public string ReservationNumber { get; set; } = string.Empty;
+
         /// <summary>
         /// The name of the guest who made the reservation
         /// </summary>

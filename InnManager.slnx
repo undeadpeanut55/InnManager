@@ -1,4 +1,5 @@
 <Solution>
+  <Project Path="InnManager.WpfApp/InnManager.WpfApp.csproj" Id="1692d1e4-6bf6-4422-9b34-7647f0424782" />
   <Project Path="InnManager/InnManager.csproj" />
   <Project Path="InnManagerTests/InnManagerTests.csproj" />
 </Solution>

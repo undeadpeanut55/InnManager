@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace InnManager.Billing
@@ -7,32 +8,74 @@ namespace InnManager.Billing
     /// <summary>
     /// Represents an invoice for a guest
     /// </summary>
-    public class Invoice
+    public class Invoice : INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler? PropertyChanged;
+
         /// <summary>
         /// An auto generated number used to uniquely identify an invoice
         /// </summary>
-        public string InvoiceNumber { get; set; } = string.Empty;
+        public string InvoiceNumber
+        {
+            get;
+            set
+            {
+                InvoiceNumber = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(InvoiceNumber)));
+            }
+        } = string.Empty;
 
         /// <summary>
         /// The time the invoice was created
         /// </summary>
-        public DateTime InvoiceDate { get; set; } = DateTime.Now;
+        public DateTime InvoiceDate
+        {
+            get;
+            set
+            {
+                InvoiceDate = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(InvoiceDate)));
+            }
+        } = DateTime.Now;
 
         /// <summary>
         /// Name of the guest responsible for the invoice
         /// </summary>
-        public string GuestName { get; set; } = string.Empty;
+        public string GuestName
+        {
+            get;
+            set
+            {
+                GuestName = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(GuestName)));
+            }
+        } = string.Empty;
 
         /// <summary>
         /// Room number that is responsible for the invoice
         /// </summary>
-        public string RoomNumber { get; set; } = string.Empty;
+        public string RoomNumber
+        {
+            get;
+            set
+            {
+                RoomNumber = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(RoomNumber)));
+            }
+        } = string.Empty;
 
         /// <summary>
         /// When the invoice is due
         /// </summary>
-        public DateTime DueDate { get; set; } = DateTime.Now;
+        public DateTime DueDate
+        {
+            get;
+            set
+            {
+                DueDate = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(DueDate)));
+            }
+        } = DateTime.Now;
 
         /// <summary>
         /// Aa list of billing records on the invoice

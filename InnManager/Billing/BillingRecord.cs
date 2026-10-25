@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace InnManager.Billing
@@ -7,27 +9,61 @@ namespace InnManager.Billing
     /// <summary>
     /// Represents a billing record
     /// </summary>
-    public abstract class BillingRecord : IBillingRecord
+    public abstract class BillingRecord : IBillingRecord, INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler? PropertyChanged;
+
         /// <summary>
-        /// Amounton the record
+        /// Amount on the record
         /// </summary>
-        public decimal Amount { get; set; } = decimal.Zero;
+        public decimal Amount
+        {
+            get;
+            set
+            {
+                Amount = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Amount)));
+            }
+        } = decimal.Zero;
 
         /// <summary>
         /// When the record was placed
         /// </summary>
-        public DateTime Date { get; set; } = DateTime.Now;
+        public DateTime Date
+        {
+            get;
+            set
+            {
+                Date = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Date)));
+            }
+        } = DateTime.Now;
 
         /// <summary>
         /// Description of the record
         /// </summary>
-        public string Description { get; set; } = string.Empty;
+        public string Description
+        {
+            get;
+            set
+            {
+                Description = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Description)));
+            }
+        } = string.Empty;
 
         /// <summary>
         /// If the record is processed
         /// </summary>
-        public bool IsProcessed { get; set; } = false;
+        public bool IsProcessed
+        {
+            get;
+            set
+            {
+                IsProcessed= value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(IsProcessed)));
+            }
+        } = false;
 
         /// <summary>
         /// The amount with a sign depending on the type of record

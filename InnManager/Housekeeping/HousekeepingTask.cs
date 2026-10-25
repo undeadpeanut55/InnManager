@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace InnManager.Housekeeping
@@ -7,32 +8,75 @@ namespace InnManager.Housekeeping
     /// <summary>
     /// A housekeeping task that is performed at a hotel
     /// </summary>
-    public class HousekeepingTask
+    public class HousekeepingTask : INotifyPropertyChanged
     {
+
+        public event PropertyChangedEventHandler? PropertyChanged;
+
         /// <summary>
         /// The hotel staff assigned to the task
         /// </summary>
-        public string AssignedStaff { get; set; } = string.Empty;
+        public string AssignedStaff
+        {
+            get;
+            set
+            {
+                AssignedStaff = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(AssignedStaff)));
+            }
+        } = string.Empty;
 
         /// <summary>
         /// The room number the task was assigned
         /// </summary>
-        public string RoomNumber { get; set; } = string.Empty;
+        public string RoomNumber
+        {
+            get;
+            set
+            {
+                RoomNumber = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(RoomNumber)));
+            }
+        } = string.Empty;
 
         /// <summary>
         /// A description of the task
         /// </summary>
-        public string Description { get; set; } = string.Empty;
+        public string Description
+        {
+            get;
+            set
+            {
+                Description = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Description)));
+            }
+        } = string.Empty;
 
         /// <summary>
         /// When the task was/is scheduled
         /// </summary>
-        public DateTime ScheduledDate { get; set; } = DateTime.Now;
+        public DateTime ScheduledDate
+        {
+            get;
+            set
+            {
+                ScheduledDate = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ScheduledDate)));
+            }
+        } = DateTime.Now;
 
         /// <summary>
         /// If the task was completed
         /// </summary>
-        public bool IsCompleted { get; set; } = false;
+        public bool IsCompleted
+        {
+            get;
+            set
+            {
+                IsCompleted = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(IsCompleted)));
+            }
+        } = false;
 
         /// <summary>
         /// The current status of the task

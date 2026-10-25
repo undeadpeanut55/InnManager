@@ -1,6 +1,7 @@
 ﻿using InnManager.Enums;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace InnManager.Rooms
@@ -11,8 +12,11 @@ namespace InnManager.Rooms
     /// <remarks>
     /// The Room class stores identifying information about a hotel room, including its room number, room type, nightly rate and current availability.
     /// </remarks>
-    public class Room
+    public class Room : INotifyPropertyChanged
     {
+
+        public event PropertyChangedEventHandler? PropertyChanged;
+
         /// <summary>
         /// Field used used in the NextId property
         /// </summary>
@@ -33,52 +37,132 @@ namespace InnManager.Rooms
         /// <summary>
         /// The rate each night for the hotel room
         /// </summary>
-        public decimal NightlyRate { get; set; } = decimal.Zero;
+        public decimal NightlyRate
+        {
+            get;
+            set
+            {
+                NightlyRate= value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(NightlyRate)));
+            }
+        } = decimal.Zero;
 
         /// <summary>
         /// The room ID number
         /// </summary>
-        public long RoomID { get; set; } = NextID;
+        public long RoomID
+        {
+            get;
+            set
+            {
+                RoomID= value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(RoomID)));
+            }
+        } = NextID;
 
         /// <summary>
         /// The room number at the hotel
         /// </summary>
-        public string RoomNumber { get; set; } = string.Empty;
+        public string RoomNumber
+        {
+            get;
+            set
+            {
+                RoomNumber= value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(RoomNumber)));
+            }
+        } = string.Empty;
 
         /// <summary>
         /// What type the room is
         /// </summary>
-        public RoomType RoomType { get; set; } = RoomType.Standard;
+        public RoomType RoomType
+        {
+            get;
+            set
+            {
+                RoomType = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(RoomType)));
+            }
+        } = RoomType.Standard;
 
         /// <summary>
         /// If the room is available
         /// </summary>
-        public bool IsAvailable { get; set; } = true;
+        public bool IsAvailable
+        {
+            get;
+            set
+            {
+                IsAvailable= value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(IsAvailable)));
+            }
+        } = true;
 
         /// <summary>
         /// What floor number the room is on at the hotel
         /// </summary>
-        public int Floor { get; set; } = 0;
+        public int Floor
+        {
+            get;
+            set
+            {
+                Floor = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Floor)));
+            }
+        } = 0;
 
         /// <summary>
         /// How many guests the room can hold
         /// </summary>
-        public int Capacity { get; set; } = 1;
+        public int Capacity
+        {
+            get;
+            set
+            {
+                Capacity= value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Capacity)));
+            }
+        } = 1;
 
         /// <summary>
         /// If the room has a balcony
         /// </summary>
-        public bool HasBalcony { get; set; } = false;
+        public bool HasBalcony
+        {
+            get;
+            set
+            {
+                HasBalcony = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(HasBalcony)));
+            }
+        } = false;
 
         /// <summary>
         /// If the room is clean
         /// </summary>
-        public bool IsClean { get; set; } = true;
+        public bool IsClean
+        {
+            get;
+            set
+            {
+                IsClean= value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(IsClean)));
+            }
+        } = true;
 
         /// <summary>
         /// The current status of the room
         /// </summary>
-        public RoomStatus Status { get; set; } = RoomStatus.Available;
+        public RoomStatus Status
+        {
+            get;
+            set
+            {
+                Status= value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Status)));
+            }
+        } = RoomStatus.Available;
 
 
     }

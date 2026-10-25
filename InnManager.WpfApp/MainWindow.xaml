@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:InnManager.WpfApp" 
         xmlns:local1="clr-namespace:InnManager.WpfApp.Controls"
         mc:Ignorable="d"
-        Title="InnManager" Height="720" Width="1080">
+        Title="InnManager" Height="720" Width="1080" MinHeight="720" MinWidth="1080">
 
     <DockPanel>
         <Grid Name="ApplicationHeader" Height="80" DockPanel.Dock="Top" Background="LightBlue">
@@ -27,28 +27,38 @@
             <StackPanel.Resources>
                 <Style TargetType="Button">
                     <Setter Property="Margin" Value="4"/>
-                    <Setter Property="Height" Value="48"/>
+                    <Setter Property="Height" Value="45"/>
                     <Setter Property="FontWeight" Value="Bold"/>
                     <Setter Property="FontSize" Value="20"/>
                 </Style>
             </StackPanel.Resources>
             
-            <Button Content="Dashboard"/>
-            <Button Content="Rooms"/>
-            <Button Content="Reservations"/>
-            <Button Content="Guests"/>
-            <Button Content="Services"/>
-            <Button Content="Invoices"/>
-            <Button Content="Payments"/>
-            <Button Content="Employees"/>
-            <Button Content="Housekeeping"/>
-            <Button Content="Reports"/>
-            <Button Content="Settings"/>
+            <Button Click="HandleSwitchToDashboard" Content="Dashboard"/>
+            <Button Click="HandleSwitchToRooms" Content="Rooms"/>
+            <Button Click="HandleSwitchToReservations" Content="Reservations"/>
+            <Button Click="HandleSwitchToGuests" Content="Guests"/>
+            <Button Click="HandleSwitchToServices" Content="Services"/>
+            <Button Click="HandleSwitchToInvoices" Content="Invoices"/>
+            <Button Click="HandleSwitchToPayments" Content="Payments"/>
+            <Button Click="HandleSwitchToEmployees" Content="Employees"/>
+            <Button Click="HandleSwitchToHousekeeping" Content="Housekeeping"/>
+            <Button Click="HandleSwitchToReports" Content="Reports"/>
+            <Button Click="HandleSwitchToSettings" Content="Settings"/>
 
         </StackPanel>
         
         <Grid Background="CornflowerBlue" Name="MainContentArea">
-            <local1:DashboardControl/>
+            <local1:DashboardControl x:Name="DashboardDisplay" Visibility="Visible"/>
+            <local1:EmployeesControl x:Name="EmployeesDisplay" Visibility="Hidden"/>
+            <local1:GuestsControl x:Name="GuestsDisplay" Visibility="Hidden"/>
+            <local1:HousekeepingControl x:Name="HousekeepingDisplay" Visibility="Hidden"/>
+            <local1:InvoicesControl x:Name="InvoicesDisplay" Visibility="Hidden"/>
+            <local1:PaymentsControls x:Name="PaymentsDisplay" Visibility="Hidden"/>
+            <local1:ReportsControl x:Name="ReportsDisplay" Visibility="Hidden"/>
+            <local1:ReservationsControl x:Name="ReservationsDisplay" Visibility="Hidden"/>
+            <local1:RoomsControl x:Name="RoomsDisplay" Visibility="Hidden"/>
+            <local1:ServicesControl x:Name="ServicesDisplay" Visibility="Hidden"/>
+            <local1:SettingsControl x:Name="SettingsDisplay" Visibility="Hidden"/>
         </Grid>
         
     </DockPanel>

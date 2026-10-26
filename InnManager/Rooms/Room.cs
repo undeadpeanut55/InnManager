@@ -34,6 +34,7 @@ namespace InnManager.Rooms
             }
         }
 
+
         /// <summary>
         /// The rate each night for the hotel room
         /// </summary>
@@ -42,10 +43,11 @@ namespace InnManager.Rooms
             get;
             set
             {
-                NightlyRate= value;
+                field = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(NightlyRate)));
             }
         } = decimal.Zero;
+
 
         /// <summary>
         /// The room ID number
@@ -55,10 +57,11 @@ namespace InnManager.Rooms
             get;
             set
             {
-                RoomID= value;
+                field = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(RoomID)));
             }
         } = NextID;
+
 
         /// <summary>
         /// The room number at the hotel
@@ -68,10 +71,11 @@ namespace InnManager.Rooms
             get;
             set
             {
-                RoomNumber= value;
+                field = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(RoomNumber)));
             }
         } = string.Empty;
+
 
         /// <summary>
         /// What type the room is
@@ -81,10 +85,11 @@ namespace InnManager.Rooms
             get;
             set
             {
-                RoomType = value;
+                field = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(RoomType)));
             }
         } = RoomType.Standard;
+
 
         /// <summary>
         /// If the room is available
@@ -94,7 +99,7 @@ namespace InnManager.Rooms
             get;
             set
             {
-                IsAvailable= value;
+                field = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(IsAvailable)));
             }
         } = true;
@@ -107,7 +112,7 @@ namespace InnManager.Rooms
             get;
             set
             {
-                Floor = value;
+                field = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Floor)));
             }
         } = 0;
@@ -120,7 +125,7 @@ namespace InnManager.Rooms
             get;
             set
             {
-                Capacity= value;
+                field = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Capacity)));
             }
         } = 1;
@@ -133,7 +138,7 @@ namespace InnManager.Rooms
             get;
             set
             {
-                HasBalcony = value;
+                field = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(HasBalcony)));
             }
         } = false;
@@ -146,7 +151,7 @@ namespace InnManager.Rooms
             get;
             set
             {
-                IsClean= value;
+                field= value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(IsClean)));
             }
         } = true;
@@ -159,7 +164,7 @@ namespace InnManager.Rooms
             get;
             set
             {
-                Status= value;
+                field = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Status)));
             }
         } = RoomStatus.Available;

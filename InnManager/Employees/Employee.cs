@@ -23,7 +23,7 @@ namespace InnManager.Employees
             get;
             set
             {
-                EmployeeID = value;
+                field = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(EmployeeID)));
             }
         } = string.Empty;
@@ -36,7 +36,7 @@ namespace InnManager.Employees
             get;
             set
             {
-                FirstName = value;
+                field = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(FirstName)));
             } 
         } = string.Empty;
@@ -49,7 +49,7 @@ namespace InnManager.Employees
             get;
             set
             {
-                LastName = value;
+                field = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(LastName)));
             }
         } = string.Empty;
@@ -62,7 +62,7 @@ namespace InnManager.Employees
             get;
             set
             {
-                Position = value;
+                field = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Position)));
             }
         } = EmployeePosition.FrontDesk;
@@ -75,7 +75,7 @@ namespace InnManager.Employees
             get;
             set
             {
-                Email = value;
+                field = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Email)));
             }
         } = string.Empty;
@@ -88,7 +88,7 @@ namespace InnManager.Employees
             get;
             set
             {
-                PhoneNumber = value;
+                field = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(PhoneNumber)));
             }
         } = string.Empty;
@@ -101,7 +101,7 @@ namespace InnManager.Employees
             get;
             set
             {
-                HireDate = value;
+                field = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(HireDate)));
             }
         } = DateTime.Now;
@@ -114,7 +114,7 @@ namespace InnManager.Employees
             get;
             set
             {
-                IsActive = value;
+                field = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(IsActive)));
             }
         } = true;

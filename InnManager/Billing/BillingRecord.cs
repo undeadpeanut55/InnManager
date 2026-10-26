@@ -21,7 +21,7 @@ namespace InnManager.Billing
             get;
             set
             {
-                Amount = value;
+                field = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Amount)));
             }
         } = decimal.Zero;
@@ -34,7 +34,7 @@ namespace InnManager.Billing
             get;
             set
             {
-                Date = value;
+                field = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Date)));
             }
         } = DateTime.Now;
@@ -47,7 +47,7 @@ namespace InnManager.Billing
             get;
             set
             {
-                Description = value;
+                field = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Description)));
             }
         } = string.Empty;
@@ -60,7 +60,7 @@ namespace InnManager.Billing
             get;
             set
             {
-                IsProcessed= value;
+                field = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(IsProcessed)));
             }
         } = false;

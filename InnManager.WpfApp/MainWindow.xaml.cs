@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Collections.Specialized;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -20,6 +21,7 @@ namespace InnManager.WpfApp
     /// </summary>
     public partial class MainWindow : Window
     {
+
         /// <summary>
         /// A helper enum for displaying the proper control
         /// </summary>
@@ -41,6 +43,8 @@ namespace InnManager.WpfApp
         public MainWindow()
         {
             InitializeComponent();
+
+            DataContext = new Hotels.Hotel();
         }
 
         /// <summary>

@@ -20,7 +20,7 @@ namespace InnManager.Billing
             get;
             set
             {
-                InvoiceNumber = value;
+                field = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(InvoiceNumber)));
             }
         } = string.Empty;
@@ -33,7 +33,7 @@ namespace InnManager.Billing
             get;
             set
             {
-                InvoiceDate = value;
+                field = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(InvoiceDate)));
             }
         } = DateTime.Now;
@@ -46,7 +46,7 @@ namespace InnManager.Billing
             get;
             set
             {
-                GuestName = value;
+                field = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(GuestName)));
             }
         } = string.Empty;
@@ -59,7 +59,7 @@ namespace InnManager.Billing
             get;
             set
             {
-                RoomNumber = value;
+                field = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(RoomNumber)));
             }
         } = string.Empty;
@@ -72,7 +72,7 @@ namespace InnManager.Billing
             get;
             set
             {
-                DueDate = value;
+                field = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(DueDate)));
             }
         } = DateTime.Now;

@@ -22,5 +22,13 @@ namespace InnManager.WpfApp.Controls
         {
             InitializeComponent();
         }
+
+        public void HandleAddRoom(object sender,  RoutedEventArgs e)
+        {
+            AddRoomWindow addRoom = new AddRoomWindow();
+            addRoom.ShowDialog();
+        }
+
+
     }
 }

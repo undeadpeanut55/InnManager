@@ -70,8 +70,18 @@
             <TextBlock Background="LightBlue">Room Status</TextBlock>
 
             <StackPanel Grid.Row="1">
-                <TextBlock Text="Available"/>
-                <TextBlock Text="Occupied"/>
+                <TextBlock>
+                    <TextBlock.Text>
+                        <MultiBinding StringFormat="{}Available - {0}">
+                            <Binding Path="AvailableRoomCount"/>
+                        </MultiBinding>
+                    </TextBlock.Text>
+                </TextBlock>
+                <TextBlock>
+                    <TextBlock.Text>
+                        <Binding Path="OccupiedRoomCount" StringFormat="Occupied - {0}"/>
+                    </TextBlock.Text>
+                </TextBlock>
                 <TextBlock Text="Out of Service"/>
                 <TextBlock Text="Maintenance"/>
             </StackPanel>

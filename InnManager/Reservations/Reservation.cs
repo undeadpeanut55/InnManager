@@ -20,7 +20,7 @@ namespace InnManager.Reservations
             get;
             set
             {
-                ReservationNumber = value;
+                field = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ReservationNumber)));
             }
         } = string.Empty;
@@ -33,7 +33,7 @@ namespace InnManager.Reservations
             get;
             set
             {
-                GuestName= value;
+                field = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(GuestName)));
             }
         } = string.Empty;
@@ -46,7 +46,7 @@ namespace InnManager.Reservations
             get;
             set
             {
-                RoomNumber= value;
+                field = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(RoomNumber)));
             }
         } = string.Empty;
@@ -59,7 +59,7 @@ namespace InnManager.Reservations
             get;
             set
             {
-                CheckInDate= value;
+                field = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(CheckInDate)));
             }
         } = DateTime.Now;
@@ -72,7 +72,7 @@ namespace InnManager.Reservations
             get;
             set
             {
-                CheckOutDate= value;
+                field = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(CheckOutDate)));
             }
         } = DateTime.Now;
@@ -85,7 +85,7 @@ namespace InnManager.Reservations
             get;
             set
             {
-                IsConfirmed= value;
+                field = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(IsConfirmed)));
             }
         } = false;
@@ -98,7 +98,7 @@ namespace InnManager.Reservations
             get;
             set
             {
-                IsCheckedOut= value;
+                field = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(IsCheckedOut)));
             }
         } = false;

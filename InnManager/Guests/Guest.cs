@@ -21,7 +21,7 @@ namespace InnManager.Guests
             get;
             set
             {
-                FirstName = value;
+                field = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(FirstName)));
             }
         } = string.Empty;
@@ -34,7 +34,7 @@ namespace InnManager.Guests
             get;
             set
             {
-                LastName = value;
+                field = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(LastName)));
             }
         } = string.Empty;
@@ -47,7 +47,7 @@ namespace InnManager.Guests
             get;
             set
             {
-                Email = value;
+                field = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Email)));
             }
         } = string.Empty;
@@ -60,7 +60,7 @@ namespace InnManager.Guests
             get;
             set
             {
-                PhoneNumber = value;
+                field = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(PhoneNumber)));
             }
         } = string.Empty;
@@ -73,7 +73,7 @@ namespace InnManager.Guests
             get;
             set
             {
-                IsCheckedIn = value;
+                field = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(IsCheckedIn)));
             }
         } = false;
@@ -86,7 +86,7 @@ namespace InnManager.Guests
             get;
             set
             {
-                GuestID = value;
+                field = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(GuestID)));
             }
         } = string.Empty;
@@ -99,7 +99,7 @@ namespace InnManager.Guests
             get;
             set
             {
-                Address = value;
+                field = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Address)));
             }
         } = string.Empty;
@@ -112,7 +112,7 @@ namespace InnManager.Guests
             get;
             set
             {
-                IDType = value;
+                field = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(IDType)));
             }
         } = IDType.Other;
@@ -125,7 +125,7 @@ namespace InnManager.Guests
             get;
             set
             {
-                IDNumber = value;
+                field = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(IDNumber)));
             }
         } = string.Empty;

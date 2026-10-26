@@ -21,7 +21,7 @@ namespace InnManager.Services
             get;
             set
             {
-                ServiceName= value;
+                field = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ServiceName)));
             }
         } = string.Empty;
@@ -34,7 +34,7 @@ namespace InnManager.Services
             get;
             set
             {
-                Description= value;
+                field = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Description)));
             }
         } = string.Empty;
@@ -46,7 +46,7 @@ namespace InnManager.Services
             get;
             set
             {
-                Price= value;
+                field = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Price)));
             }
         } = decimal.Zero;
@@ -59,7 +59,7 @@ namespace InnManager.Services
             get;
             set
             {
-                IsAvailable= value;
+                field = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(IsAvailable)));
             }
         } = true;
@@ -72,7 +72,7 @@ namespace InnManager.Services
             get;
             set
             {
-                Category= value;
+                field = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Category)));
             }
         } = ServiceCategory.Miscellaneous;

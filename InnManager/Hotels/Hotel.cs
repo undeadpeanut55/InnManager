@@ -8,6 +8,9 @@ using InnManager.Rooms;
 using InnManager.Services;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Collections.Specialized;
+using System.ComponentModel;
 using System.Text;
 
 namespace InnManager.Hotels
@@ -15,12 +18,17 @@ namespace InnManager.Hotels
     /// <summary>
     /// Represents a Hotel
     /// </summary>
-    public class Hotel
+    public class Hotel : INotifyCollectionChanged, INotifyPropertyChanged
     {
+        public event NotifyCollectionChangedEventHandler? CollectionChanged;
+
+        public event PropertyChangedEventHandler? PropertyChanged;
+
+
         /// <summary>
         /// The name of the hotel
         /// </summary>
-        public string Name { get; init; }
+        public string? Name { get; init; }
 
         /// <summary>
         /// What type of hotel it is
@@ -30,42 +38,42 @@ namespace InnManager.Hotels
         /// <summary>
         /// A list of the rooms in the hotel
         /// </summary>
-        public List<Room> Rooms { get; } = new List<Room>();
+        public ObservableCollection<Room> Rooms { get; } = new ObservableCollection<Room>();
 
         /// <summary>
         /// A list of guests at the hotel
         /// </summary>
-        public List<Guest> Guests { get; } = new List<Guest>();
+        public ObservableCollection<Guest> Guests { get; } = new ObservableCollection<Guest>();
 
         /// <summary>
         /// a list of reservations at the hotel
         /// </summary>
-        public List<Reservation> Reservations { get; } = new List<Reservation>();
+        public ObservableCollection<Reservation> Reservations { get; } = new ObservableCollection<Reservation>();
 
         /// <summary>
         /// a list of services the hotel provides
         /// </summary>
-        public List<Service> Services { get; } = new List<Service>();
+        public ObservableCollection<Service> Services { get; } = new ObservableCollection<Service>();
 
         /// <summary>
         /// A list of invoices made at the hotel
         /// </summary>
-        public List<Invoice> Invoices { get; } = new List<Invoice>();
+        public ObservableCollection<Invoice> Invoices { get; } = new ObservableCollection<Invoice>();
 
         /// <summary>
         /// A list of payments reeived by the hotel
         /// </summary>
-        public List<Payment> Payments { get; } = new List<Payment>();
+        public ObservableCollection<Payment> Payments { get; } = new ObservableCollection<Payment>();
 
         /// <summary>
         /// A list of employees working at the hotel
         /// </summary>
-        public List<Employee> Employees { get; } = new List<Employee>();
+        public ObservableCollection<Employee> Employees { get; } = new ObservableCollection<Employee>();
 
         /// <summary>
         /// A list of housekeeping tasks done at the hotel
         /// </summary>
-        public List<HousekeepingTask> HousekeepingTasks { get; } = new List<HousekeepingTask>();
+        public ObservableCollection<HousekeepingTask> HousekeepingTasks { get; } = new ObservableCollection<HousekeepingTask>();
 
         /// <summary>
         /// The number of available rooms at the hotel

@@ -21,7 +21,7 @@ namespace InnManager.Billing
             get;
             set
             {
-                ReferenceNumber = value;
+                field = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ReferenceNumber)));
             }
         } = string.Empty;
@@ -34,7 +34,7 @@ namespace InnManager.Billing
             get;
             set
             {
-                PaymentMethod = value;
+                field = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(PaymentMethod)));
             }
         } = PaymentMethod.Cash;

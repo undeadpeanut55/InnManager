@@ -1,0 +1,94 @@
+﻿<Window x:Class="InnManager.WpfApp.AddRoomWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InnManager.WpfApp"
+        xmlns:system="clr-namespace:System;assembly=mscorlib"
+        xmlns:enum="clr-namespace:InnManager.Enums;assembly=InnManager"
+        mc:Ignorable="d"
+        Title="AddRoomWindow" Height="450" Width="450">
+
+    <Window.Resources>
+        <ObjectDataProvider x:Key="roomTypes" MethodName="GetValues" ObjectType="{x:Type system:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="enum:RoomType"/>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+        <ObjectDataProvider x:Key="statuses" MethodName="GetValues" ObjectType="{x:Type system:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="enum:RoomStatus"/>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+    </Window.Resources>
+
+
+
+    <DockPanel>
+        <TextBlock DockPanel.Dock="Top" Background="LightBlue">Add New Room</TextBlock>
+        <WrapPanel DockPanel.Dock="Bottom" HorizontalAlignment="Right">
+            <Button Click="HandleAddRoom" Height="25" Content="Add Room"/>
+            <Button Height="25" Content="Cancel"/>
+        </WrapPanel>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Column="0">
+                <TextBlock Text="Room Number"/>
+                <TextBox x:Name="RoomNumberInput" Text="e.g. 101"/>
+
+                <TextBlock Text="Room Type"/>
+                <ComboBox x:Name="RoomTypeInput" ItemsSource="{Binding Source={StaticResource roomTypes}}" SelectedIndex="0"/>
+
+                <TextBlock Text="Floor"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBox x:Name="FloorInput" VerticalAlignment="Center" Grid.Column="0" Grid.RowSpan="2" Text="0"/>
+                    <Button Grid.Column="1" Grid.Row="0" Content="+"/>
+                    <Button Grid.Column="1" Grid.Row="1" Content="-"/>
+                </Grid>
+
+                <TextBlock Text="Capacity"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBox x:Name="CapacityInput" VerticalAlignment="Center" Grid.Column="0" Grid.RowSpan="2" Text="0"/>
+                    <Button Grid.Column="1" Grid.Row="0" Content="+"/>
+                    <Button Grid.Column="1" Grid.Row="1" Content="-"/>
+                </Grid>
+            </StackPanel>
+
+            <StackPanel Grid.Column="1">
+                <TextBlock Text="Rate ($)"/>
+                <TextBox x:Name="RateInput" Text="0.00"/>
+
+                <TextBlock Text="Status"/>
+                <ComboBox x:Name="StatusInput" ItemsSource="{Binding Source={StaticResource statuses}}" SelectedIndex="0"/>
+
+                <CheckBox x:Name="IsCleanCheckBox" Content="Is Clean"/>
+                <CheckBox x:Name="HasBalconyCheckBox" Content="Has Balcony"/>
+
+
+            </StackPanel>
+            
+            
+        </Grid>
+        
+    </DockPanel>
+</Window>

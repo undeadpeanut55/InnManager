@@ -21,7 +21,7 @@ namespace InnManager.Housekeeping
             get;
             set
             {
-                AssignedStaff = value;
+                field = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(AssignedStaff)));
             }
         } = string.Empty;
@@ -34,7 +34,7 @@ namespace InnManager.Housekeeping
             get;
             set
             {
-                RoomNumber = value;
+                field = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(RoomNumber)));
             }
         } = string.Empty;
@@ -47,7 +47,7 @@ namespace InnManager.Housekeeping
             get;
             set
             {
-                Description = value;
+                field = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Description)));
             }
         } = string.Empty;
@@ -60,7 +60,7 @@ namespace InnManager.Housekeeping
             get;
             set
             {
-                ScheduledDate = value;
+                field = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ScheduledDate)));
             }
         } = DateTime.Now;
@@ -73,7 +73,7 @@ namespace InnManager.Housekeeping
             get;
             set
             {
-                IsCompleted = value;
+                field = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(IsCompleted)));
             }
         } = false;

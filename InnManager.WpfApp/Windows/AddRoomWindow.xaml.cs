@@ -21,7 +21,6 @@ namespace InnManager.WpfApp
         public AddRoomWindow()
         {
             InitializeComponent();
-
         }
 
 
@@ -35,26 +34,28 @@ namespace InnManager.WpfApp
                 && int.TryParse(CapacityInput.Text, out int capacity))
             {
 
-                var r = new InnManager.Rooms.Room()
-                {
-                    RoomNumber = RoomNumberInput.Text,
-                    RoomType = (RoomType)RoomTypeInput.SelectedItem,
-                    Floor = floorNum,
-                    NightlyRate = rate,
-                    Capacity = capacity,
-                    Status = (RoomStatus)StatusInput.SelectedItem,
-                    IsClean = IsCleanCheckBox.IsChecked ?? false,
-                    HasBalcony = HasBalconyCheckBox.IsChecked ?? false
-                };
+
 
 
                 if (DataContext is InnManager.Hotels.Hotel hotel)
                 {
+                    var r = new InnManager.Rooms.Room()
+                    {
+                        RoomNumber = RoomNumberInput.Text,
+                        RoomType = (RoomType)RoomTypeInput.SelectedItem,
+                        Floor = floorNum,
+                        NightlyRate = rate,
+                        Capacity = capacity,
+                        Status = (RoomStatus)StatusInput.SelectedItem,
+                        IsClean = IsCleanCheckBox.IsChecked ?? false,
+                        HasBalcony = HasBalconyCheckBox.IsChecked ?? false
+                    };
+                    r.PropertyChanged += hotel.HandleRoomPropertyChange;
                     hotel.Rooms.Add(r);
+                  this.Close();
                 }
             }
-            
-                this.Close();
+
         }
 
     }

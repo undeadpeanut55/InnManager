@@ -83,13 +83,12 @@ namespace InnManager.Guests
         /// </summary>
         public string GuestID
         {
-            get;
-            set
+            get
             {
-                field = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(GuestID)));
+                return "GST-" + FirstName[0] + FirstName[1] + "-" + IDNumber[IDNumber.Length-3] + IDNumber[IDNumber.Length - 2] + IDNumber[IDNumber.Length - 1];
             }
-        } = string.Empty;
+
+        }
 
         /// <summary>
         /// The address of the guest

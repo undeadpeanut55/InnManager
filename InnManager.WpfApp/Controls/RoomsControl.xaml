@@ -19,7 +19,7 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Text="Rooms" FontSize="35" FontWeight="Bold" Background="LightBlue" Grid.Row="0" Grid.ColumnSpan="2"/>
+        <TextBlock Text="Rooms" FontSize="35" FontWeight="Bold" Background="Azure" Grid.Row="0" Grid.ColumnSpan="2"/>
         
         <WrapPanel Grid.Row="1" Grid.ColumnSpan="2" Background="Linen">
             <WrapPanel.Resources>
@@ -29,7 +29,7 @@
                     <Setter Property="Height" Value="25"/>
                 </Style>
             </WrapPanel.Resources>
-            <Button Click="HandleAddRoom" Content="Add Room"/>
+            <Button Click="HandleAddRoomClick" Content="Add Room"/>
             <Button Content="Edit"/>
             <Button Content="Delete"/>
             <Button Content="Refresh"/>
@@ -66,11 +66,26 @@
             <TextBlock Text="Is Clean" Grid.Column="6"/>
             <TextBlock Text="Has Balcony" Grid.Column="7"/>
 
-            <StackPanel Grid.Row="1" Grid.ColumnSpan="8">
-                
-            </StackPanel>
+            <DataGrid HeadersVisibility="None" Grid.ColumnSpan="8" Grid.Row="1" ItemsSource="{Binding Path=Rooms}" AutoGenerateColumns="False" IsReadOnly="true">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Width="*" Binding="{Binding RoomNumber}"/>
+                    <DataGridTextColumn Width="*" Binding="{Binding RoomType}"/>
+                    <DataGridTextColumn Width="*" Binding="{Binding Floor}"/>
+                    <DataGridTextColumn Width="*" Binding="{Binding Capacity}"/>
+                    <DataGridTextColumn Width="*" Binding="{Binding NightlyRate}"/>
+                    <DataGridTextColumn Width="*" Binding="{Binding Status}"/>
+                    <DataGridTextColumn Width="*" Binding="{Binding IsClean}"/>
+                    <DataGridTextColumn Width="*" Binding="{Binding HasBalcony}"/>
+                </DataGrid.Columns>
+            </DataGrid>
 
-            <TextBlock Grid.ColumnSpan="8" Grid.Row="2" Text="Total Rooms: 0"/>
+            <TextBlock Grid.ColumnSpan="8" Grid.Row="2">
+                <TextBlock.Text>
+                    <MultiBinding StringFormat="{}Total Rooms: {0}">
+                        <Binding Path="Rooms.Count"/>
+                    </MultiBinding>
+                </TextBlock.Text>
+            </TextBlock>
 
         </Grid>
         

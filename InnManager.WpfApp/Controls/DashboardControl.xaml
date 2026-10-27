@@ -57,6 +57,15 @@
             <TextBlock Grid.Row="1" Grid.Column="3" Text="Check-Out"/>
             <TextBlock Grid.Row="1" Grid.Column="4" Text="Status"/>
 
+            <DataGrid HeadersVisibility="None" Grid.Row="2" Grid.ColumnSpan="5" ItemsSource="{Binding Path=Reservations}" AutoGenerateColumns="false">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Width="*" Binding="{Binding GuestName}"/>
+                    <DataGridTextColumn Width="*" Binding="{Binding RoomNumber}"/>
+                    <DataGridTextColumn Width="*" Binding="{Binding CheckInDate}"/>
+                    <DataGridTextColumn Width="*" Binding="{Binding CheckOutDate}"/>
+                    <DataGridTextColumn Width="*" Binding="{Binding Status}"/>
+                </DataGrid.Columns>
+            </DataGrid>
             
             
         </Grid>

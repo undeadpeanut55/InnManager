@@ -1,4 +1,5 @@
-﻿using System;
+﻿using InnManager.WpfApp.Windows;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -22,5 +23,14 @@ namespace InnManager.WpfApp.Controls
         {
             InitializeComponent();
         }
+
+        public void HandleAddGuestClick(object sender, RoutedEventArgs e)
+        {
+            var addGuestWin = new AddGuestWindow();
+            addGuestWin.DataContext = DataContext;
+            addGuestWin.ShowDialog();
+        }
+
+
     }
 }

@@ -75,6 +75,21 @@ namespace InnManager.Hotels
         /// </summary>
         public ObservableCollection<HousekeepingTask> HousekeepingTasks { get; } = new ObservableCollection<HousekeepingTask>();
 
+        public void HandleRoomsCollectionChange(object? sender, NotifyCollectionChangedEventArgs e)
+        {
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(AvailableRoomCount)));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(OccupiedRoomCount)));
+        }
+
+        public void HandleRoomPropertyChange(object? sender, PropertyChangedEventArgs e)
+        {
+            if(e.PropertyName == nameof(Room.Status))
+            {
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(AvailableRoomCount)));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(OccupiedRoomCount)));
+            }
+        }
+
         /// <summary>
         /// The number of available rooms at the hotel
         /// </summary>

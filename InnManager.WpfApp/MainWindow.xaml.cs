@@ -1,4 +1,6 @@
-﻿using System.Collections.Specialized;
+﻿using InnManager.Hotels;
+using System.Collections.ObjectModel;
+using System.Collections.Specialized;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -44,7 +46,12 @@ namespace InnManager.WpfApp
         {
             InitializeComponent();
 
-            DataContext = new Hotels.Hotel();
+            var hotel = new Hotel();
+
+            hotel.Rooms.CollectionChanged += hotel.HandleRoomsCollectionChange;
+
+            DataContext = hotel;
+
         }
 
         /// <summary>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using InnManager.WpfApp.Windows;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -21,6 +22,13 @@ namespace InnManager.WpfApp.Controls
         public ReservationsControl()
         {
             InitializeComponent();
+        }
+
+        public void HandleAddReservationClick(object? sender, RoutedEventArgs e)
+        {
+            var AddRes = new AddReservationWindow();
+            AddRes.DataContext = DataContext;
+            AddRes.ShowDialog();
         }
     }
 }

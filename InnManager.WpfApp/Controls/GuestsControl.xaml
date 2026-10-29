@@ -19,7 +19,7 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Text="Guests" FontSize="35" FontWeight="Bold" Background="LightBlue" Grid.Row="0" Grid.ColumnSpan="2"/>
+        <TextBlock Text="Guests" FontSize="35" FontWeight="Bold" Background="Azure" Grid.Row="0" Grid.ColumnSpan="2"/>
 
         <WrapPanel Grid.Row="1" Grid.ColumnSpan="2" Background="Linen">
             <WrapPanel.Resources>

@@ -19,7 +19,7 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Text="Reservations" FontSize="35" FontWeight="Bold" Background="LightBlue" Grid.Row="0" Grid.ColumnSpan="2"/>
+        <TextBlock Text="Reservations" FontSize="35" FontWeight="Bold" Background="Azure" Grid.Row="0" Grid.ColumnSpan="2"/>
 
         <WrapPanel Grid.Row="1" Grid.ColumnSpan="2" Background="Linen">
             <WrapPanel.Resources>
@@ -29,11 +29,10 @@
                     <Setter Property="Height" Value="25"/>
                 </Style>
             </WrapPanel.Resources>
-            <Button Content="New Reservation"/>
+            <Button Click="HandleAddReservationClick" Content="New Reservation"/>
             <Button Content="Edit"/>
             <Button Content="Cancel"/>
             <Button Content="Refresh"/>
-
         </WrapPanel>
 
         <TextBox Height="25" FontSize="15" Grid.Row="1" Grid.Column="1"  Width="300" Text="Search guest name, reservation number... "/>

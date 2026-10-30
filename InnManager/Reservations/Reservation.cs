@@ -38,6 +38,16 @@ namespace InnManager.Reservations
             }
         } = string.Empty;
 
+        public int NumberOfGuests
+        {
+            get;
+            set
+            {
+                field = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(NumberOfGuests)));
+            }
+        }
+
         /// <summary>
         /// The room number that is reserved
         /// </summary>

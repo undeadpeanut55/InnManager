@@ -1,4 +1,5 @@
-﻿using System;
+﻿using InnManager.Enums;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -20,6 +21,20 @@ namespace InnManager.WpfApp.Windows
         public AddGuestWindow()
         {
             InitializeComponent();
+        }
+
+        public void HandleAddGuestClick(object? sender, RoutedEventArgs e)
+        {
+            var guest = new InnManager.Guests.Guest()
+            {
+                FirstName = FirstNameInput.Text, 
+                LastName = LastNameInput.Text,
+                PhoneNumber = PhoneInput.Text,
+                Address = AddressInput.Text,
+                Email = EmailInput.Text,
+                IDType = (IDType)IDTypeInput.SelectedItem,
+                IDNumber = IDNumberInput.Text
+            };
         }
     }
 }

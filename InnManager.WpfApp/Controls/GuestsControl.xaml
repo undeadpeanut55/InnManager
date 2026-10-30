@@ -19,7 +19,7 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Text="Guests" FontSize="35" FontWeight="Bold" Background="LightBlue" Grid.Row="0" Grid.ColumnSpan="2"/>
+        <TextBlock Text="Guests" FontSize="35" FontWeight="Bold" Background="Azure" Grid.Row="0" Grid.ColumnSpan="2"/>
 
         <WrapPanel Grid.Row="1" Grid.ColumnSpan="2" Background="Linen">
             <WrapPanel.Resources>
@@ -68,9 +68,11 @@
             <TextBlock Text="ID Number" Grid.Column="7"/>
             <TextBlock Text="Checked In" Grid.Column="8"/>
 
-            <StackPanel Grid.Row="1" Grid.ColumnSpan="9">
-
-            </StackPanel>
+            <DataGrid Grid.ColumnSpan="9" Grid.Row="1">
+                <DataGrid.Columns>
+                    <DataGridTextColumn/>
+                </DataGrid.Columns>
+            </DataGrid>
 
             <TextBlock Grid.ColumnSpan="8" Grid.Row="2" Text="Total Guests: 0"/>
 

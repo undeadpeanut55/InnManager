@@ -4,9 +4,61 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:InnManager.WpfApp.Windows"
+        xmlns:system="clr-namespace:System;assembly=mscorlib"
+        xmlns:enum="clr-namespace:InnManager.Enums;assembly=InnManager"
         mc:Ignorable="d"
-        Title="AddGuestWindow" Height="450" Width="800">
-    <Grid>
+        Title="AddGuestWindow" Height="450" Width="450">
+
+    <Window.Resources>
+        <ObjectDataProvider x:Key="idTypes" MethodName="GetValues" ObjectType="{x:Type system:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="enum:IDType"/>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+    </Window.Resources>
+
+
+
+    <DockPanel>
+        <TextBlock DockPanel.Dock="Top" Text="Add New Guest" Background="Azure"/>
+
+        <WrapPanel DockPanel.Dock="Bottom" HorizontalAlignment="Right">
+            <Button Content="Add Guest"/>
+            <Button Content="Cancel"/>
+        </WrapPanel>
         
-    </Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Column="0">
+                <TextBlock Text="First Name"/>
+                <TextBox x:Name="FirstNameInput"/>
+
+                <TextBlock Text="Phone"/>
+                <TextBox x:Name="PhoneInput"/>
+
+                <TextBlock Text="Address"/>
+                <TextBox x:Name="AddressInput"/>
+            </StackPanel>
+
+            <StackPanel Grid.Column="1">
+                <TextBlock Text="Last Name"/>
+                <TextBox x:Name="LastNameInput"/>
+
+                <TextBlock Text="Email"/>
+                <TextBox x:Name="EmailInput"/>
+
+                <TextBlock Text="ID Type"/>
+                <ComboBox x:Name="IDTypeInput" ItemsSource="{Binding Source={StaticResource idTypes}}" SelectedIndex="0"/>
+
+                <TextBlock Text="ID Number"/>
+                <TextBox x:Name="IDNumberInput"/>
+            </StackPanel>
+        </Grid>
+
+
+    </DockPanel>
 </Window>

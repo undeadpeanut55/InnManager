@@ -29,8 +29,8 @@ namespace InnManager.WpfApp
 
         public void HandleAddRoom(object sender, RoutedEventArgs e)
         {
-            if (int.TryParse(FloorInput.Text, out int floorNum) 
-                && decimal.TryParse(RateInput.Text, out decimal rate) 
+            if (int.TryParse(FloorInput.Text, out int floorNum)
+                && decimal.TryParse(RateInput.Text, out decimal rate)
                 && int.TryParse(CapacityInput.Text, out int capacity))
             {
 
@@ -52,8 +52,8 @@ namespace InnManager.WpfApp
                     };
                     r.PropertyChanged += hotel.HandleRoomPropertyChange;
                     hotel.Rooms.Add(r);
-                  this.Close();
                 }
+                this.Close();
             }
 
         }

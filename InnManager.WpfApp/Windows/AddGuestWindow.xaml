@@ -23,7 +23,7 @@
         <TextBlock DockPanel.Dock="Top" Text="Add New Guest" Background="Azure"/>
 
         <WrapPanel DockPanel.Dock="Bottom" HorizontalAlignment="Right">
-            <Button Content="Add Guest"/>
+            <Button Click="HandleAddGuestClick" Content="Add Guest"/>
             <Button Content="Cancel"/>
         </WrapPanel>
         

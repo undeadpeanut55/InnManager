@@ -129,7 +129,10 @@ namespace InnManager.Guests
             }
         } = string.Empty;
 
-
+        public override string ToString()
+        {
+            return GuestID;
+        }
 
     }
 }

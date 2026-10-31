@@ -35,6 +35,14 @@ namespace InnManager.WpfApp.Windows
                 IDType = (IDType)IDTypeInput.SelectedItem,
                 IDNumber = IDNumberInput.Text
             };
+
+            if(DataContext is InnManager.Hotels.Hotel hotel)
+            {
+                hotel.Guests.Add(guest);
+            }
+
+
+            Close();
         }
     }
 }

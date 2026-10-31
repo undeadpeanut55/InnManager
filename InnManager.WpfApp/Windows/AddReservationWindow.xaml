@@ -4,25 +4,11 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:InnManager.WpfApp.Windows"
+        xmlns:InnManagerRooms="clr-namespace:InnManager.Rooms;assembly=InnManager"
         xmlns:enum="clr-namespace:InnManager.Enums;assembly=InnManager"
         xmlns:system="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
         Title="AddReservationWindow" Height="450" Width="450">
-
-    <!--
-    <Window.Resources>
-        <ObjectDataProvider x:Key="statusTypes" MethodName="GetValues" ObjectType="{x:Type system:Enum}">
-            <ObjectDataProvider.MethodParameters>
-                <x:Type TypeName="enum:RoomStatus"/>
-            </ObjectDataProvider.MethodParameters>
-        </ObjectDataProvider>
-        <ObjectDataProvider x:Key="statuses" MethodName="GetValues" ObjectType="{x:Type system:Enum}">
-            <ObjectDataProvider.MethodParameters>
-                <x:Type TypeName="enum:RoomStatus"/>
-            </ObjectDataProvider.MethodParameters>
-        </ObjectDataProvider>
-    </Window.Resources>
--->
 
     <DockPanel>
         <TextBlock Text="New Reservation" FontWeight="Bold" FontSize="25" Background="Azure" DockPanel.Dock="Top"/>
@@ -45,10 +31,10 @@
             </Grid.RowDefinitions>
 
             <TextBlock Text="Guest" Grid.Column="0" Grid.Row="0"/>
-            <ComboBox x:Name="GuestInput" ItemsSource="{Binding Guests}" Grid.Column="1" Grid.Row="0"/>
+            <ComboBox x:Name="GuestInput" ItemsSource="{Binding Guests}" SelectedIndex="0" Grid.Column="1" Grid.Row="0"/>
 
             <TextBlock Text="Room" Grid.Column="0" Grid.Row="1"/>
-            <ComboBox x:Name="RoomInput" ItemsSource="{Binding Rooms}" Grid.Column="1" Grid.Row="1"/>
+            <ComboBox x:Name="RoomInput" ItemsSource="{Binding Rooms}" SelectedIndex="0" Grid.Column="1" Grid.Row="1"/>
 
             <TextBlock Text="Check-In Date" Grid.Column="0" Grid.Row="2"/>
             <DatePicker x:Name="CheckInDateInput" Grid.Column="1" Grid.Row="2"/>
@@ -72,7 +58,12 @@
             </Grid>
 
             <TextBlock Text="Status"  Grid.Column="0" Grid.Row="5"/>
-            <ComboBox x:Name="StatusInput" Grid.Column="1" Grid.Row="5"/>
+            <ComboBox x:Name="StatusInput" SelectedIndex="0" Grid.Column="1" Grid.Row="5">
+                <ComboBoxItem Content="Pending"/>
+                <ComboBoxItem Content="Confirmed"/>
+                <ComboBoxItem Content="Checked Out"/>
+                <ComboBoxItem Content="Overdue"/>
+            </ComboBox>
         </Grid>
         
     </DockPanel>

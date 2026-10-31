@@ -170,5 +170,12 @@ namespace InnManager.Rooms
         } = RoomStatus.Available;
 
 
+
+        public override string ToString()
+        {
+            return RoomNumber;
+        }
+
+
     }
 }

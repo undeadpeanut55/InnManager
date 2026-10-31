@@ -68,9 +68,17 @@
             <TextBlock Text="ID Number" Grid.Column="7"/>
             <TextBlock Text="Checked In" Grid.Column="8"/>
 
-            <DataGrid Grid.ColumnSpan="9" Grid.Row="1">
+            <DataGrid  HeadersVisibility="None" ItemsSource="{Binding Path=Guests}" AutoGenerateColumns="False" IsReadOnly="true" Grid.ColumnSpan="9" Grid.Row="1">
                 <DataGrid.Columns>
-                    <DataGridTextColumn/>
+                    <DataGridTextColumn Width="*" Binding="{Binding GuestID}"/>
+                    <DataGridTextColumn Width="*" Binding="{Binding FirstName}"/>
+                    <DataGridTextColumn Width="*" Binding="{Binding LastName}"/>
+                    <DataGridTextColumn Width="*" Binding="{Binding PhoneNumber}"/>
+                    <DataGridTextColumn Width="*" Binding="{Binding Email}"/>
+                    <DataGridTextColumn Width="*" Binding="{Binding Address}"/>
+                    <DataGridTextColumn Width="*" Binding="{Binding IDType}"/>
+                    <DataGridTextColumn Width="*" Binding="{Binding IDNumber}"/>
+                    <DataGridTextColumn Width="*" Binding="{Binding IsCheckedIn}"/>
                 </DataGrid.Columns>
             </DataGrid>
 

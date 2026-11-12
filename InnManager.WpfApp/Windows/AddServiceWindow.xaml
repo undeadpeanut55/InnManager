@@ -1,0 +1,80 @@
+﻿<Window x:Class="InnManager.WpfApp.Windows.AddServiceWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InnManager.WpfApp.Windows"
+        xmlns:system="clr-namespace:System;assembly=mscorlib"
+        xmlns:enum="clr-namespace:InnManager.Enums;assembly=InnManager"
+        mc:Ignorable="d"
+        Title="AddServiceWindow" Height="450" Width="450">
+
+    <Window.Resources>
+        <ObjectDataProvider x:Key="serviceCategories" MethodName="GetValues" ObjectType="{x:Type system:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="enum:ServiceCategory"/>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+    </Window.Resources>
+
+
+
+
+
+
+    <DockPanel>
+        <TextBlock DockPanel.Dock="Top" Background="Azure" Text="Add New Service"/>
+
+        <WrapPanel HorizontalAlignment="Right" DockPanel.Dock="Bottom">
+            <Button Click="HandleAddService" Content="Add Service"/>
+            <Button Content="Cancel"/>
+        </WrapPanel>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Column="0">
+                <TextBlock Text="Service Name"/>
+                <TextBox x:Name="NameInput"/>
+
+                <TextBlock Text="Price ($)"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBox x:Name="PriceInput" VerticalAlignment="Center" Grid.Column="0" Grid.RowSpan="2" Text="0.00"/>
+                    <Button Grid.Column="1" Grid.Row="0" Content="+"/>
+                    <Button Grid.Column="1" Grid.Row="1" Content="-"/>
+                </Grid>
+                
+                
+            </StackPanel>
+
+            <StackPanel Grid.Column="1">
+                <TextBlock Text="Category"/>
+                <ComboBox x:Name="CategoryInput" ItemsSource="{Binding Source={StaticResource serviceCategories}}" SelectedIndex="0" />
+
+                <TextBlock Text="Available"/>
+                <CheckBox x:Name="AvailableInput" Content="Available"/>
+            </StackPanel>
+
+            <StackPanel Grid.ColumnSpan="2" Grid.Row="1">
+                <TextBlock Text="Description"/>
+                <TextBox x:Name="DescriptionInput"/>
+            </StackPanel>
+        </Grid>
+    </DockPanel>
+</Window>

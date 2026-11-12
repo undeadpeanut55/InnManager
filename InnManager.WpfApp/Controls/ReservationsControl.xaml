@@ -63,9 +63,17 @@
             <TextBlock Text="Status" Grid.Column="5"/>
             <TextBlock Text="Total Amount" Grid.Column="6"/>
 
-            <StackPanel Grid.Row="1" Grid.ColumnSpan="8">
-
-            </StackPanel>
+            <DataGrid HeadersVisibility="None" ItemsSource="{Binding Path=Reservations}" AutoGenerateColumns="False" IsReadOnly="True" Grid.Row="1" Grid.ColumnSpan="8">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Width="*" Binding="{Binding ReservationNumber}"/>
+                    <DataGridTextColumn Width="*" Binding="{Binding GuestName}"/>
+                    <DataGridTextColumn Width="*" Binding="{Binding RoomNumber}"/>
+                    <DataGridTextColumn Width="*" Binding="{Binding CheckInDate}"/>
+                    <DataGridTextColumn Width="*" Binding="{Binding CheckOutDate}"/>
+                    <DataGridTextColumn Width="*" Binding="{Binding Status}"/>
+                    <DataGridTextColumn Width="*" Binding="{Binding NumberOfGuests}"/>
+                </DataGrid.Columns>
+            </DataGrid>
 
             <TextBlock Grid.ColumnSpan="8" Grid.Row="2" Text="Total Reservations: 0"/>
 

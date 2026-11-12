@@ -85,7 +85,7 @@ namespace InnManager.Guests
         {
             get
             {
-                return "GST-" + FirstName[0] + FirstName[1] + "-" + IDNumber[IDNumber.Length-3] + IDNumber[IDNumber.Length - 2] + IDNumber[IDNumber.Length - 1];
+                return "GST-" + LastName[0] + LastName[1] + "-" + IDNumber[IDNumber.Length-3] + IDNumber[IDNumber.Length - 2] + IDNumber[IDNumber.Length - 1];
             }
 
         }

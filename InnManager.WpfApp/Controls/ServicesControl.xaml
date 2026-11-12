@@ -29,7 +29,7 @@
                     <Setter Property="Height" Value="25"/>
                 </Style>
             </WrapPanel.Resources>
-            <Button Content="Add Service"/>
+            <Button Click="HandleAddServiceClick" Content="Add Service"/>
             <Button Content="Edit"/>
             <Button Content="Delete"/>
             <Button Content="Refresh"/>
@@ -60,9 +60,15 @@
             <TextBlock Text="Available" Grid.Column="3"/>
             <TextBlock Text="Category" Grid.Column="4"/>
 
-            <StackPanel Grid.Row="1" Grid.ColumnSpan="5">
-
-            </StackPanel>
+            <DataGrid HeadersVisibility="None" IsReadOnly="True" AutoGenerateColumns="False" ItemsSource="{Binding Path=Services}" Grid.Row="1" Grid.ColumnSpan="5">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Width="*" Binding="{Binding ServiceName}"/>
+                    <DataGridTextColumn Width="*" Binding="{Binding Description}"/>
+                    <DataGridTextColumn Width="*" Binding="{Binding Price}"/>
+                    <DataGridTextColumn Width="*" Binding="{Binding IsAvailable}"/>
+                    <DataGridTextColumn Width="*" Binding="{Binding Category}"/>
+                </DataGrid.Columns>
+            </DataGrid>
 
             <TextBlock Grid.ColumnSpan="8" Grid.Row="2" Text="Total Services: 0"/>
 

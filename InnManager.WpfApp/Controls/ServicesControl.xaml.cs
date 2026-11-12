@@ -1,4 +1,5 @@
-﻿using System;
+﻿using InnManager.WpfApp.Windows;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -21,6 +22,13 @@ namespace InnManager.WpfApp.Controls
         public ServicesControl()
         {
             InitializeComponent();
+        }
+
+        public void HandleAddServiceClick(object sender, RoutedEventArgs e)
+        {
+            var addServWin = new AddServiceWindow();
+            addServWin.DataContext = DataContext;
+            addServWin.ShowDialog();
         }
     }
 }

@@ -13,7 +13,7 @@
     <DockPanel>
         <TextBlock Text="New Reservation" FontWeight="Bold" FontSize="25" Background="Azure" DockPanel.Dock="Top"/>
         <WrapPanel DockPanel.Dock="Bottom" HorizontalAlignment="Right">
-            <Button Content="Create Reservation"/>
+            <Button Click="HandleAddAreservation" Content="Create Reservation"/>
             <Button Content="Cancel"/>
         </WrapPanel>
         <Grid>

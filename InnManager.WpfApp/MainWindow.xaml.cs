@@ -52,6 +52,35 @@ namespace InnManager.WpfApp
 
             DataContext = hotel;
 
+            // *******REMOVE BEFORE SUBMITTING************* //
+            // Values added to help with testing
+            var guest = new InnManager.Guests.Guest()
+            {
+                FirstName = "Brody",
+                LastName = "Groom",
+                Email = "groom.brody02@gmail.com",
+                PhoneNumber = "6204407980",
+                Address = "1817 COllege Heights rd",
+                IDType = InnManager.Enums.IDType.DriverLicense,
+                IDNumber = "1234567890"
+            };
+
+            var room = new InnManager.Rooms.Room()
+            {
+                RoomNumber = "101",
+                RoomType = InnManager.Enums.RoomType.Standard,
+                Floor = 1,
+                NightlyRate = 100,
+                Capacity = 4,
+                Status = InnManager.Enums.RoomStatus.Available,
+                IsClean = true,
+                HasBalcony = false
+            };
+
+
+            hotel.Guests.Add(guest);
+            hotel.Rooms.Add(room);
+
         }
 
         /// <summary>

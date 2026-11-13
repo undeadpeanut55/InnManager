@@ -152,5 +152,20 @@ namespace InnManager.Reservations
                 return "Pending";
             }
         }
+
+        public decimal Rate {  get; init; } = decimal.Zero;
+
+        public decimal TotalAmount
+        {
+            get
+            {
+                return (CheckOutDate - CheckInDate).Days * Rate;
+            }
+        }
+
+        public override string ToString()
+        {
+            return ReservationNumber;
+        }
     }
 }

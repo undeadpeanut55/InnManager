@@ -71,7 +71,7 @@
                     <DataGridTextColumn Width="*" Binding="{Binding CheckInDate}"/>
                     <DataGridTextColumn Width="*" Binding="{Binding CheckOutDate}"/>
                     <DataGridTextColumn Width="*" Binding="{Binding Status}"/>
-                    <DataGridTextColumn Width="*" Binding="{Binding NumberOfGuests}"/>
+                    <DataGridTextColumn Width="*" Binding="{Binding TotalAmount}"/>
                 </DataGrid.Columns>
             </DataGrid>
 

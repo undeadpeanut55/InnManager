@@ -1,0 +1,45 @@
+﻿<Window x:Class="InnManager.WpfApp.Windows.AddInvoiceWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InnManager.WpfApp.Windows"
+        mc:Ignorable="d"
+        Title="AddInvoiceWindow" Height="450" Width="450">
+    
+    <DockPanel> 
+        <TextBlock Background="Azure" Text="Add New Invoice" DockPanel.Dock="Top"/>
+
+        <WrapPanel DockPanel.Dock="Bottom" HorizontalAlignment="Right">
+            <Button Content="Create Invoice"/>
+            <Button Content="Cancel"/>
+        </WrapPanel>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Column="0">
+
+                <TextBlock Text="Guest"/>
+                <ComboBox/>
+
+                <TextBlock Text="Invoice Date"/>
+                <DatePicker/>
+            </StackPanel>
+
+            <StackPanel Grid.Column="1">
+                <TextBlock Text="Reservation"/>
+                <ComboBox ItemsSource="{Binding Reservations}" SelectedIndex="0"/>
+
+                <TextBlock Text="Due Date"/>
+                <DatePicker/>
+
+            </StackPanel>
+        </Grid>
+        
+    </DockPanel>
+    
+</Window>

@@ -29,7 +29,7 @@
                     <Setter Property="Height" Value="25"/>
                 </Style>
             </WrapPanel.Resources>
-            <Button Content="+ New Invoice"/>
+            <Button Click="HandleNewInvoiceClick" Content="+ New Invoice"/>
             <Button Content="View"/>
             <Button Content="Download"/>
             <Button Content="Refresh"/>
@@ -66,9 +66,11 @@
             <TextBlock Text="Paid Amount ($)" Grid.Column="6"/>
             <TextBlock Text="Status" Grid.Column="7"/>
 
-            <StackPanel Grid.Row="1" Grid.ColumnSpan="8">
-
-            </StackPanel>
+            <DataGrid Grid.Row="1" Grid.ColumnSpan="8" AutoGenerateColumns="False" HeadersVisibility="None" ItemsSource="{Binding Invoices}" IsReadOnly="True"> 
+                <DataGrid.Columns>
+                    <DataGridTextColumn/>
+                </DataGrid.Columns>
+            </DataGrid>
 
             <TextBlock Grid.ColumnSpan="8" Grid.Row="2" Text="Total Invoices: 0"/>
 

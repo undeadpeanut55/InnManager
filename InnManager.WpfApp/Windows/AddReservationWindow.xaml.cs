@@ -41,7 +41,8 @@ namespace InnManager.WpfApp.Windows
                     RoomNumber = room.RoomNumber,
                     CheckInDate = CheckInDateInput.SelectedDate ?? DateTime.Now,
                     CheckOutDate = CheckOutDateInput.SelectedDate ?? DateTime.Now,
-                    ReservationNumber = guest.GuestID + "-" + room.RoomNumber
+                    ReservationNumber = guest.GuestID + "-" + room.RoomNumber,
+                    Rate = room.NightlyRate
                 };
 
                 if(!string.Equals(StatusInput.SelectedValue.ToString(), "Pending"))

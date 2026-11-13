@@ -11,7 +11,7 @@
         <TextBlock Background="Azure" Text="Add New Invoice" DockPanel.Dock="Top"/>
 
         <WrapPanel DockPanel.Dock="Bottom" HorizontalAlignment="Right">
-            <Button Content="Create Invoice"/>
+            <Button Click="HandleCreateInvoice" Content="Create Invoice"/>
             <Button Content="Cancel"/>
         </WrapPanel>
 
@@ -32,7 +32,7 @@
 
             <StackPanel Grid.Column="1">
                 <TextBlock Text="Reservation"/>
-                <ComboBox ItemsSource="{Binding Reservations}" SelectedIndex="0"/>
+                <ComboBox SelectionChanged="HandleReservationSelected" ItemsSource="{Binding Reservations}" SelectedIndex="0"/>
 
                 <TextBlock Text="Due Date"/>
                 <DatePicker/>

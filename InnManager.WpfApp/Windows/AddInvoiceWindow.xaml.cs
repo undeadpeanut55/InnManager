@@ -21,5 +21,25 @@ namespace InnManager.WpfApp.Windows
         {
             InitializeComponent();
         }
+
+        public void HandleReservationSelected(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+
+
+        public void HandleCreateInvoice(object? sender, RoutedEventArgs e)
+        {
+
+
+
+            var invoice = new InnManager.Billing.Invoice()
+            {
+
+            };
+
+
+        }
     }
 }

@@ -68,7 +68,14 @@
 
             <DataGrid Grid.Row="1" Grid.ColumnSpan="8" AutoGenerateColumns="False" HeadersVisibility="None" ItemsSource="{Binding Invoices}" IsReadOnly="True"> 
                 <DataGrid.Columns>
-                    <DataGridTextColumn/>
+                    <DataGridTextColumn Width="*" Binding="{Binding InvoiceNumber}"/>
+                    <DataGridTextColumn Width="*" Binding="{Binding GuestName}"/>
+                    <DataGridTextColumn Width="*" Binding="{Binding RoomNumber}"/>
+                    <DataGridTextColumn Width="*" Binding="{Binding InvoiceDate}"/>
+                    <DataGridTextColumn Width="*" Binding="{Binding DueDate}"/>
+                    <DataGridTextColumn Width="*" Binding="{Binding TotalCharges}"/>
+                    <DataGridTextColumn Width="*" Binding="{Binding TotalPayments}"/>
+                    <DataGridTextColumn Width="*" Binding="{Binding Status}"/>
                 </DataGrid.Columns>
             </DataGrid>
 

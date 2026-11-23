@@ -24,18 +24,18 @@
             <StackPanel Grid.Column="0">
 
                 <TextBlock Text="Guest"/>
-                <ComboBox/>
+                <ComboBox x:Name="GuestInput"/>
 
                 <TextBlock Text="Invoice Date"/>
-                <DatePicker/>
+                <DatePicker x:Name="InvoiceDateInput"/>
             </StackPanel>
 
             <StackPanel Grid.Column="1">
                 <TextBlock Text="Reservation"/>
-                <ComboBox SelectionChanged="HandleReservationSelected" ItemsSource="{Binding Reservations}" SelectedIndex="0"/>
+                <ComboBox x:Name="ReservationInput" SelectionChanged="HandleReservationSelected" ItemsSource="{Binding Reservations}" SelectedIndex="0"/>
 
                 <TextBlock Text="Due Date"/>
-                <DatePicker/>
+                <DatePicker x:Name="DueDateInput"/>
 
             </StackPanel>
         </Grid>

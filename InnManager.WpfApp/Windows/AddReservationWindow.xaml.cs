@@ -41,7 +41,7 @@ namespace InnManager.WpfApp.Windows
                     RoomNumber = room.RoomNumber,
                     CheckInDate = CheckInDateInput.SelectedDate ?? DateTime.Now,
                     CheckOutDate = CheckOutDateInput.SelectedDate ?? DateTime.Now,
-                    ReservationNumber = guest.GuestID + "-" + room.RoomNumber,
+                    ReservationNumber = "RES-"+guest.GuestID.Substring(4) + "-" + room.RoomNumber,
                     Rate = room.NightlyRate
                 };
 

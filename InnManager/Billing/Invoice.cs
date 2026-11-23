@@ -78,7 +78,7 @@ namespace InnManager.Billing
         } = DateTime.Now;
 
         /// <summary>
-        /// Aa list of billing records on the invoice
+        /// A list of billing records on the invoice
         /// </summary>
         public List<BillingRecord> BillingRecords { get; } = new List<BillingRecord>();
         

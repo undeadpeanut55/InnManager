@@ -44,5 +44,10 @@ namespace InnManager.Billing
         /// </summary>
         public override decimal SignedAmount => -Amount;
 
+        public override string ToString()
+        {
+            return ReferenceNumber;
+        }
+
     }
 }

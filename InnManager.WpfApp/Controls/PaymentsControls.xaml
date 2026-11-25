@@ -65,7 +65,16 @@
             <TextBlock Text="Status" Grid.Column="5"/>
             <TextBlock Text="Reference No" Grid.Column="6"/>
 
-            <DataGrid Grid.Row="1" Grid.ColumnSpan="7">
+            <DataGrid IsReadOnly="True" ItemsSource="{Binding Payments}" AutoGenerateColumns="False" HeadersVisibility="None" Grid.Row="1" Grid.ColumnSpan="7">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Width="*" Binding="{Binding ReferenceNumber}"/>
+                    <DataGridTextColumn Width="*" Binding="{Binding ReferenceNumber}"/>
+                    <DataGridTextColumn Width="*" Binding="{Binding Date}"/>
+                    <DataGridTextColumn Width="*" Binding="{Binding PaymentMethod}"/>
+                    <DataGridTextColumn Width="*" Binding="{Binding Amount}"/>
+                    <DataGridTextColumn Width="*" Binding="{Binding Status}"/>
+                    <DataGridTextColumn Width="*" Binding="{Binding ReferenceNumber}"/>
+                </DataGrid.Columns>
 
             </DataGrid>
 

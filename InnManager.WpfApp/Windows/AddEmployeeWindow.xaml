@@ -1,0 +1,60 @@
+﻿<Window x:Class="InnManager.WpfApp.Windows.AddEmployeeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InnManager.WpfApp.Windows"
+        xmlns:system="clr-namespace:System;assembly=mscorlib"
+        xmlns:enum="clr-namespace:InnManager.Enums;assembly=InnManager"
+        mc:Ignorable="d"
+        Title="AddEmployeeWindow" Height="450" Width="450">
+
+
+    <Window.Resources>
+        <ObjectDataProvider x:Key="employeePosition" MethodName="GetValues" ObjectType="{x:Type system:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="enum:EmployeePosition"/>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+    </Window.Resources>
+    
+    <DockPanel>
+        <TextBlock Background="Azure" Text="Add New Employee" DockPanel.Dock="Top"/>
+        <WrapPanel HorizontalAlignment="Right" DockPanel.Dock="Bottom">
+            <Button Click="HandleAddEmployeeClick" Content="Add Employee"/>
+            <Button Content="Cancel"/>
+        </WrapPanel>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0">
+                <TextBlock Text="First Name"/>
+                <TextBox x:Name="FirstNameInput" Text="Enter first name"/>
+
+                <TextBlock Text="Position"/>
+                <ComboBox x:Name="PositionInput" ItemsSource="{Binding Source={StaticResource employeePosition}}" SelectedIndex="0"/>
+
+                <TextBlock Text="Phone"/>
+                <TextBox x:Name="PhoneInput" Text="Enter phone number"/>
+
+                <TextBlock Text="Status"/>
+                <ComboBox x:Name="StatusInput" SelectedIndex="0"/>
+            </StackPanel>
+
+            <StackPanel Grid.Column="1">
+                <TextBlock Text="Last Name"/>
+                <TextBox x:Name="LastNameInput" Text="Enter last name"/>
+
+                <TextBlock Text="Email"/>
+                <TextBox x:Name="EmailInput" Text="Enter email address"/>
+
+                <TextBlock Text="Hire Date"/>
+                <DatePicker x:Name="HireDateInput"/>
+            </StackPanel>
+            
+        </Grid>
+    </DockPanel>
+</Window>

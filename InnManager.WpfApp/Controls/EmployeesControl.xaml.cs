@@ -1,4 +1,5 @@
-﻿using System;
+﻿using InnManager.WpfApp.Windows;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -21,6 +22,13 @@ namespace InnManager.WpfApp.Controls
         public EmployeesControl()
         {
             InitializeComponent();
+        }
+
+        public void HandleNewEmployeeClick(object? sender, RoutedEventArgs e)
+        {
+            var empWin = new AddEmployeeWindow();
+            empWin.DataContext = DataContext;
+            empWin.ShowDialog();
         }
     }
 }

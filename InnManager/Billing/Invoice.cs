@@ -152,6 +152,11 @@ namespace InnManager.Billing
             }
         }
 
+        public override string ToString()
+        {
+            return InvoiceNumber;
+        }
+
 
     }
 }

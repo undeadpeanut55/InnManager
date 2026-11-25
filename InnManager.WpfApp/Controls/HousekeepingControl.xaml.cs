@@ -1,4 +1,5 @@
-﻿using System;
+﻿using InnManager.WpfApp.Windows;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -21,6 +22,13 @@ namespace InnManager.WpfApp.Controls
         public HousekeepingControl()
         {
             InitializeComponent();
+        }
+
+        public void HandleNewTaskClick(object? sender, RoutedEventArgs e)
+        {
+            var taskWin = new AddHousekeepingWindow();
+            taskWin.DataContext = DataContext;
+            taskWin.ShowDialog();
         }
     }
 }

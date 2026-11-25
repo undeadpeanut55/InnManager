@@ -29,7 +29,7 @@
                     <Setter Property="Height" Value="25"/>
                 </Style>
             </WrapPanel.Resources>
-            <Button Content="+ New Task"/>
+            <Button Click="HandleNewTaskClick" Content="+ New Task"/>
             <Button Content="Edit"/>
             <Button Content="Delete"/>
             <Button Content="Refresh"/>
@@ -60,9 +60,15 @@
             <TextBlock Text="Scheduled Date" Grid.Column="3"/>
             <TextBlock Text="Status" Grid.Column="4"/>
 
-            <StackPanel Grid.Row="1" Grid.ColumnSpan="5">
-
-            </StackPanel>
+            <DataGrid ItemsSource="{Binding HousekeepingTasks}" AutoGenerateColumns="False" IsReadOnly="True" HeadersVisibility="None" Grid.Row="1" Grid.ColumnSpan="5">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Width="*" Binding="{Binding RoomNumber}"/>
+                    <DataGridTextColumn Width="*" Binding="{Binding Description}"/>
+                    <DataGridTextColumn Width="*" Binding="{Binding AssignedStaff}"/>
+                    <DataGridTextColumn Width="*" Binding="{Binding ScheduledDate}"/>
+                    <DataGridTextColumn Width="*" Binding="{Binding Status}"/>
+                </DataGrid.Columns>
+            </DataGrid>
 
             <TextBlock Grid.ColumnSpan="8" Grid.Row="2" Text="Total Tasks: 0"/>
 

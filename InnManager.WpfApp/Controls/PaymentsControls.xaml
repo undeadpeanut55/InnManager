@@ -29,7 +29,7 @@
                     <Setter Property="Height" Value="25"/>
                 </Style>
             </WrapPanel.Resources>
-            <Button Content="+ New Payment"/>
+            <Button Click="HandleNewPaymentClick" Content="+ New Payment"/>
             <Button Content="View"/>
             <Button Content="Receipt"/>
             <Button Content="Refund"/>
@@ -65,9 +65,9 @@
             <TextBlock Text="Status" Grid.Column="5"/>
             <TextBlock Text="Reference No" Grid.Column="6"/>
 
-            <StackPanel Grid.Row="1" Grid.ColumnSpan="7">
+            <DataGrid Grid.Row="1" Grid.ColumnSpan="7">
 
-            </StackPanel>
+            </DataGrid>
 
             <TextBlock Grid.ColumnSpan="8" Grid.Row="2" Text="Total Payments: 0"/>
 

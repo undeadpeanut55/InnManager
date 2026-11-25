@@ -1,0 +1,76 @@
+﻿<Window x:Class="InnManager.WpfApp.Windows.AddPaymentWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InnManager.WpfApp.Windows"
+        xmlns:system="clr-namespace:System;assembly=mscorlib"
+        xmlns:enum="clr-namespace:InnManager.Enums;assembly=InnManager"
+        mc:Ignorable="d"
+        Title="AddPaymentWindow" Height="450" Width="450">
+
+
+    <Window.Resources>
+        <ObjectDataProvider x:Key="paymentMethod" MethodName="GetValues" ObjectType="{x:Type system:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="enum:PaymentMethod"/>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+    </Window.Resources>
+
+
+
+    <DockPanel>
+        <TextBlock DockPanel.Dock="Top" Text="Add New Payment" Background="Azure"/>
+        <WrapPanel HorizontalAlignment="Right" DockPanel.Dock="Bottom">
+            <Button Click="HandleAddPaymentClick" Content="Add Payment"/>
+            <Button Content="Cancel"/>
+        </WrapPanel>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Column="0">
+                <TextBlock Text="Invoice"/>
+                <ComboBox x:Name="InvoiceInput" ItemsSource="{Binding Invoices}" SelectedIndex="0"/>
+
+                <TextBlock Text="Payment Date"/>
+                <DatePicker x:Name="PaymentDateInput"/>
+
+                <TextBlock Text="Amount ($)"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBox x:Name="AmountInput" VerticalAlignment="Center" Grid.Column="0" Grid.RowSpan="2" Text="0"/>
+                    <Button Grid.Column="1" Grid.Row="0" Content="+"/>
+                    <Button Grid.Column="1" Grid.Row="1" Content="-"/>
+                </Grid>
+            </StackPanel>
+
+
+            <StackPanel Grid.Column="1">
+                <TextBlock Text="Guest"/>
+                <TextBox x:Name="GuestInput" IsEnabled="False"/>
+
+                <TextBlock Text="Payment Method"/>
+                <ComboBox x:Name="PaymentMethodInput" ItemsSource="{Binding Source={StaticResource paymentMethod}}" SelectedIndex="0"/>
+
+            </StackPanel>
+            
+            
+            
+            
+        </Grid>
+
+
+    </DockPanel>
+</Window>

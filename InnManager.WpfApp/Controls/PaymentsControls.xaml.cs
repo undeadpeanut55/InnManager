@@ -1,4 +1,5 @@
-﻿using System;
+﻿using InnManager.WpfApp.Windows;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -22,5 +23,15 @@ namespace InnManager.WpfApp.Controls
         {
             InitializeComponent();
         }
+
+
+        public void HandleNewPaymentClick(object sender, RoutedEventArgs e)
+        {
+            var win = new AddPaymentWindow();
+            win.DataContext = DataContext;
+            win.ShowDialog();
+        }
+
+
     }
 }
